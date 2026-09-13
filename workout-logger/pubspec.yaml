@@ -20,7 +20,7 @@ version: 2.1.1+35
 
 environment:
   sdk: ^3.11.4
-  flutter: 3.44.8
+  flutter: 3.47.2
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -56,7 +56,7 @@ dependencies:
   package_info_plus: ^10.2.1
 
   # Health Connect integration
-  health_connector: ^3.9.1
+  health_connector: ^3.11.0
 
   # AI — Gemini
   google_generative_ai: ^0.4.3

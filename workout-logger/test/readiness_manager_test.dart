@@ -95,8 +95,11 @@ class _MockHcService implements IHealthConnectService {
   }
 
   @override
-  Future<bool> syncWorkoutSession(WorkoutSession session, {String? title}) async =>
-      true;
+  Future<bool> syncWorkoutSession(
+    WorkoutSession session, {
+    String? title,
+    Map<String, String>? exerciseNames,
+  }) async => true;
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────────────

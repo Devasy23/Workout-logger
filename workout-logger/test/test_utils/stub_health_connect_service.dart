@@ -31,5 +31,9 @@ class StubHcService implements IHealthConnectService {
   @override
   Future<bool> requestReadPermissions() async => true;
   @override
-  Future<bool> syncWorkoutSession(WorkoutSession session, {String? title}) async => true;
+  Future<bool> syncWorkoutSession(
+    WorkoutSession session, {
+    String? title,
+    Map<String, String>? exerciseNames,
+  }) async => true;
 }

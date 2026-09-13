@@ -30,7 +30,11 @@ class _Hc implements IHealthConnectService {
   @override
   Future<bool> requestReadPermissions() async => true;
   @override
-  Future<bool> syncWorkoutSession(WorkoutSession session, {String? title}) async => true;
+  Future<bool> syncWorkoutSession(
+    WorkoutSession session, {
+    String? title,
+    Map<String, String>? exerciseNames,
+  }) async => true;
 }
 
 DateTime _t(int h, int m, [int s = 0]) => DateTime(2026, 6, 9, h, m, s);

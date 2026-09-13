@@ -7,7 +7,15 @@ abstract class IHealthConnectService {
   Future<bool> isAvailable();
   Future<bool> requestPermissions();
   Future<bool> hasPermissions();
-  Future<bool> syncWorkoutSession(WorkoutSession session, {String? title});
+  /// Writes [session] to Health Connect.
+  ///
+  /// [exerciseNames] maps exercise IDs to display names for the session notes,
+  /// which is the only place Health Connect can carry per-exercise labels.
+  Future<bool> syncWorkoutSession(
+    WorkoutSession session, {
+    String? title,
+    Map<String, String>? exerciseNames,
+  });
 
   /// Requests all readiness read permissions (sleep, HR, resting HR, HRV)
   /// in one dialog. Returns true if at least one was granted — partial

@@ -48,7 +48,11 @@ class _StubHc implements IHealthConnectService {
   @override
   Future<bool> requestReadPermissions() async => true;
   @override
-  Future<bool> syncWorkoutSession(WorkoutSession session, {String? title}) async => true;
+  Future<bool> syncWorkoutSession(
+    WorkoutSession session, {
+    String? title,
+    Map<String, String>? exerciseNames,
+  }) async => true;
 }
 
 SleepPeriod _night(DateTime end, {int deep = 0, int rem = 0, int light = 0, int awake = 0}) {

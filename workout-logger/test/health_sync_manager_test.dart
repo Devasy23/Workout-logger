@@ -14,6 +14,7 @@ class _MockHcService implements IHealthConnectService {
   int syncCallCount = 0;
   WorkoutSession? lastSession;
   String? lastTitle;
+  Map<String, String>? lastExerciseNames;
   bool returnValue;
   bool shouldThrow;
 
@@ -54,11 +55,13 @@ class _MockHcService implements IHealthConnectService {
   Future<bool> syncWorkoutSession(
     WorkoutSession session, {
     String? title,
+    Map<String, String>? exerciseNames,
   }) async {
     if (shouldThrow) throw Exception('mock HC error');
     syncCallCount++;
     lastSession = session;
     lastTitle = title;
+    lastExerciseNames = exerciseNames;
     return returnValue;
   }
 }
@@ -148,6 +151,18 @@ void main() {
       manager.syncSession(_makeSession());
       await Future<void>.delayed(Duration.zero);
       // If we reach here, no exception propagated.
+    });
+
+    test('passes exercise names from storage to the sync call', () async {
+      await settings.setHealthConnectEnabled(true);
+      final manager = HealthSyncManager(hc, settings, storage: storage);
+
+      manager.syncSession(_makeSession());
+      await Future<void>.delayed(Duration.zero);
+      await Future<void>.delayed(Duration.zero);
+
+      expect(hc.lastExerciseNames, isNotNull);
+      expect(hc.lastExerciseNames!['bench_press'], 'Bench Press');
     });
   });
 }

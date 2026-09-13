@@ -126,9 +126,10 @@ class WorkoutLoggerApp extends StatelessWidget {
   static final IHealthConnectService _healthConnectService = HealthConnectService();
   static final ProgramManager _programManager = ProgramManager(_storageService);
   static final SettingsProvider _settingsProvider = SettingsProvider(_storageService);
-  // HealthSyncManager uses the in-memory settings flag — no storage I/O on sync.
+  /// HealthSyncManager reads the in-memory settings flag; storage is used
+  /// only for a one-time exercise-name lookup used in the Health Connect notes.
   static final HealthSyncManager _healthSyncManager =
-      HealthSyncManager(_healthConnectService, _settingsProvider);
+      HealthSyncManager(_healthConnectService, _settingsProvider, storage: _storageService);
   // HistoryManager is the single owner of session history + HC sync trigger.
   static final HistoryManager _historyManager =
       HistoryManager(_storageService, healthSyncManager: _healthSyncManager);

@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:health_connector/health_connector.dart';
 import 'package:repforge/models/models.dart';
 import 'package:repforge/services/health_connect_service.dart';
 import '../test_utils/test_fixtures.dart';
@@ -154,5 +155,61 @@ void main() {
     final service = HealthConnectService();
     final available = await service.isAvailable();
     expect(available, isFalse);
+  });
+
+  group('writeWithWeightFallback', () {
+    setUp(HealthConnectService.resetSegmentWeightSupport);
+
+    test('returns true on a first write that succeeds', () async {
+      final calls = <bool>[];
+      final ok = await HealthConnectService.writeWithWeightFallback(
+        ({required bool includeWeight}) async => calls.add(includeWeight),
+      );
+
+      expect(ok, isTrue);
+      expect(calls, [true]);
+    });
+
+    test('retries without weight when the device rejects segment weight', () async {
+      final calls = <bool>[];
+      final ok = await HealthConnectService.writeWithWeightFallback(
+        ({required bool includeWeight}) async {
+          calls.add(includeWeight);
+          if (includeWeight) {
+            throw const UnsupportedOperationException('segment weight needs SDK extension 21');
+          }
+        },
+      );
+
+      expect(ok, isTrue);
+      expect(calls, [true, false]);
+    });
+
+    test('skips the weight attempt on later syncs once unsupported', () async {
+      await HealthConnectService.writeWithWeightFallback(
+        ({required bool includeWeight}) async {
+          if (includeWeight) {
+            throw const UnsupportedOperationException('segment weight needs SDK extension 21');
+          }
+        },
+      );
+
+      final calls = <bool>[];
+      final ok = await HealthConnectService.writeWithWeightFallback(
+        ({required bool includeWeight}) async => calls.add(includeWeight),
+      );
+
+      expect(ok, isTrue);
+      expect(calls, [false]);
+    });
+
+    test('returns false when the weightless retry also fails', () async {
+      final ok = await HealthConnectService.writeWithWeightFallback(
+        ({required bool includeWeight}) async =>
+            throw const UnsupportedOperationException('nope'),
+      );
+
+      expect(ok, isFalse);
+    });
   });
 }
