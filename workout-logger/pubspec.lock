@@ -356,42 +356,37 @@ packages:
     dependency: "direct main"
     description:
       name: health_connector
-      sha256: "3caec088ae94023117b30e804a2bc19c369121a0618a5baa0849472e17d7b6c8"
       url: "https://pub.dev"
     source: hosted
-    version: "3.9.3"
+    version: "3.11.0"
   health_connector_core:
     dependency: transitive
     description:
       name: health_connector_core
-      sha256: "8a2aa99574dcd8868447af7ab16dc9a26caba48a194e8141e6f6e54f7848f82d"
       url: "https://pub.dev"
     source: hosted
-    version: "3.9.2"
+    version: "3.10.0"
   health_connector_hc_android:
     dependency: transitive
     description:
       name: health_connector_hc_android
-      sha256: "063023a7ee4ec2acb4e2d4166de68df145ddaaa58e67d251926f22eed28a306c"
       url: "https://pub.dev"
     source: hosted
-    version: "3.6.2"
+    version: "3.8.0"
   health_connector_hk_ios:
     dependency: transitive
     description:
       name: health_connector_hk_ios
-      sha256: "12e958e5481c493319a1972460be369f38ac494d103359fc09ba121b46f5d6eb"
       url: "https://pub.dev"
     source: hosted
-    version: "3.9.2"
+    version: "3.10.0"
   health_connector_logger:
     dependency: transitive
     description:
       name: health_connector_logger
-      sha256: eb5bf901502329c216d8ac8f2f16fb5a6c2a2725431651293cf96b74005a022b
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0"
+    version: "4.0.1"
   hive:
     dependency: "direct main"
     description:
@@ -532,10 +527,9 @@ packages:
     dependency: transitive
     description:
       name: matcher
-      sha256: dc0b7dc7651697ea4ff3e69ef44b0407ea32c487a39fff6a4004fa585e901861
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.19"
+    version: "0.12.20"
   material_color_utilities:
     dependency: transitive
     description:
@@ -548,10 +542,9 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: "1741988757a65eb6b36abe716829688cf01910bbf91c34354ff7ec1c3de2b349"
       url: "https://pub.dev"
     source: hosted
-    version: "1.18.0"
+    version: "1.19.0"
   mime:
     dependency: transitive
     description:
@@ -913,10 +906,9 @@ packages:
     dependency: transitive
     description:
       name: test_api
-      sha256: "949a932224383300f01be9221c39180316445ecb8e7547f70a41a35bf421fb9e"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.11"
+    version: "0.7.12"
   tuple:
     dependency: transitive
     description:
@@ -1001,10 +993,9 @@ packages:
     dependency: transitive
     description:
       name: vector_math
-      sha256: d530bd74fea330e6e364cda7a85019c434070188383e1cd8d9777ee586914c5b
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "2.4.2"
   vm_service:
     dependency: transitive
     description:
