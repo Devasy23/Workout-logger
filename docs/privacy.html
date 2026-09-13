@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RepForge - Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for RepForge - Privacy-first, local-first workout logger with Health Connect integration.">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent-cyan: #00d4ff;
+      --accent-purple: #8b5cf6;
+      --border: #30363d;
+      --table-header: #21262d;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(139,92,246,0.15));
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+      padding-bottom: 0.3rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      color: #c9d1d9;
+    }
+    ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      color: #c9d1d9;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: var(--table-header);
+      color: var(--text);
+    }
+    .callout {
+      background: rgba(0, 212, 255, 0.05);
+      border-left: 4px solid var(--accent-cyan);
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1.25rem 0;
+    }
+    .callout strong {
+      color: var(--accent-cyan);
+    }
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      font-family: monospace;
+      background: rgba(110, 118, 129, 0.2);
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">Open Source & Privacy First</div>
+      <h1>RepForge Privacy Policy</h1>
+      <div class="meta">Last Updated: September 11, 2026 &bull; Effective Date: September 11, 2026</div>
+    </div>
+
+    <p>RepForge is an open-source, privacy-first workout logging application developed by Devasy Patel. This Privacy Policy outlines how your data is treated when using the RepForge mobile app.</p>
+
+    <h2>1. Core Principle: Local-First Architecture</h2>
+    <ul>
+      <li><strong>No Account Required:</strong> You are not required to create an account, log in, or provide personal identity details to use RepForge.</li>
+      <li><strong>Local Storage:</strong> All workout sessions, routines, personal records (PRs), analytics, and preferences are stored exclusively on your device in a local SQLite database.</li>
+      <li><strong>No Developer Servers:</strong> We do not operate developer servers or centralized databases. Your workout data stays securely on your device.</li>
+    </ul>
+
+    <h2>2. Health Connect Integration (Android Health Connect)</h2>
+    <p>RepForge integrates with Android Health Connect to provide workout synchronization and recovery insights. This feature requires your explicit runtime consent.</p>
+
+    <h3>Permissions Requested</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>WRITE_EXERCISE</code></td>
+          <td>Writes completed RepForge workouts to Health Connect for other apps to see.</td>
+        </tr>
+        <tr>
+          <td><code>READ_EXERCISE</code></td>
+          <td>Reads previous workout sessions to maintain consistent exercise history.</td>
+        </tr>
+        <tr>
+          <td><code>READ_SLEEP</code></td>
+          <td>Reads sleep duration and stages to compute your daily readiness score.</td>
+        </tr>
+        <tr>
+          <td><code>READ_HEART_RATE</code> / <code>READ_RESTING_HEART_RATE</code></td>
+          <td>Reads resting heart rate metrics to evaluate physiological strain and recovery.</td>
+        </tr>
+        <tr>
+          <td><code>READ_HEART_RATE_VARIABILITY</code></td>
+          <td>Reads HRV data to compute physiological readiness for training.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Health Connect Privacy Guarantees:</strong>
+      <ul>
+        <li>Health Connect data is processed strictly on-device. It is never transmitted to external servers.</li>
+        <li>Health data is never sold, licensed, or shared with data brokers, advertisers, or credit/insurance agencies.</li>
+        <li>You can revoke or modify these permissions at any time in Android Settings &rarr; Health Connect.</li>
+      </ul>
+    </div>
+
+    <h2>3. Optional Generative AI Features (AI Coach)</h2>
+    <p>RepForge includes an optional AI Coach and Routine Optimizer powered by Google Gemini API:</p>
+    <ul>
+      <li><strong>Completely Optional:</strong> This feature is dormant unless you explicitly opt in and enter your personal Gemini API key under <strong>Settings &rarr; AI Settings</strong>.</li>
+      <li><strong>Direct HTTPS Connection:</strong> Prompts and requested workout context are transmitted directly from your device to Google Gemini API servers over encrypted HTTPS. RepForge operates no intermediary server.</li>
+      <li>Data sent to Google is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+    </ul>
+
+    <h2>4. Third-Party Trackers & Advertising</h2>
+    <ul>
+      <li><strong>No Ads:</strong> RepForge is 100% ad-free.</li>
+      <li><strong>No Third-Party Analytics:</strong> No tracking SDKs (Firebase Analytics, Mixpanel, etc.) are included in RepForge.</li>
+      <li><strong>Offline Fonts:</strong> Typography (Geist / GeistMono) is embedded directly into the app binary, avoiding runtime network font requests.</li>
+    </ul>
+
+    <h2>5. Data Retention, Export & Deletion</h2>
+    <ul>
+      <li><strong>Data Portability:</strong> Export a full JSON backup of all your workouts at any time in <strong>Settings &rarr; Backup & Restore &rarr; Export</strong>.</li>
+      <li><strong>Complete Deletion:</strong> Clear your data anytime inside the app, clear app storage in Android Settings, or uninstall the app. Since data is local, uninstalling permanently deletes all stored data.</li>
+    </ul>
+
+    <h2>6. Contact & Source Code</h2>
+    <p>RepForge is open-source under the Apache 2.0 license. You can inspect the source code, verify all data flows, or contact the developer:</p>
+    <ul>
+      <li><strong>Developer:</strong> Devasy Patel</li>
+      <li><strong>Email:</strong> <a href="mailto:patel.devasy.23@gmail.com">patel.devasy.23@gmail.com</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/Devasy/RepForge" target="_blank" rel="noopener">github.com/Devasy/RepForge</a></li>
+    </ul>
+
+    <div class="footer">
+      &copy; 2026 Devasy Patel &bull; RepForge &bull; Open-source under Apache-2.0
+    </div>
+  </div>
+</body>
+</html>
